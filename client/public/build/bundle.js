@@ -23106,13 +23106,13 @@ var app = (function () {
 
     try {
       var firebaseConfig = {
-        apiKey: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.apiKey,
-        authDomain: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.authDomain,
-        projectId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.projectId,
-        storageBucket: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.storageBucket,
-        messagingSenderId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.messagingSenderId,
-        appId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.appId,
-        measurementId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.measurementId
+        apiKey: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.apiKey,
+        authDomain: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.authDomain,
+        projectId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.projectId,
+        storageBucket: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.storageBucket,
+        messagingSenderId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.messagingSenderId,
+        appId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.appId,
+        measurementId: {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.measurementId
       };
     }
     catch (err) {
@@ -24898,7 +24898,7 @@ var app = (function () {
     /* routes/privsek.svelte generated by Svelte v3.37.0 */
     const file$1 = "routes/privsek.svelte";
 
-    // (28:1) {#if loggedIn == true}
+    // (29:1) {#if loggedIn == true}
     function create_if_block_1(ctx) {
     	let div;
     	let button;
@@ -24911,9 +24911,9 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Log Out";
     			attr_dev(button, "class", "logout svelte-ywteqx");
-    			add_location(button, file$1, 29, 3, 573);
+    			add_location(button, file$1, 30, 3, 574);
     			attr_dev(div, "class", "profile svelte-ywteqx");
-    			add_location(div, file$1, 28, 2, 548);
+    			add_location(div, file$1, 29, 2, 549);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -24936,14 +24936,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(28:1) {#if loggedIn == true}",
+    		source: "(29:1) {#if loggedIn == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:2) {:else}
+    // (38:2) {:else}
     function create_else_block(ctx) {
     	let h3;
     	let t1;
@@ -24968,20 +24968,20 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			span.textContent = "Log In";
-    			add_location(h3, file$1, 37, 3, 740);
+    			add_location(h3, file$1, 38, 3, 741);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "ammount svelte-ywteqx");
     			attr_dev(input0, "placeholder", "username");
     			attr_dev(input0, "maxlength", "15");
-    			add_location(input0, file$1, 38, 3, 760);
+    			add_location(input0, file$1, 39, 3, 761);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "class", "ammount svelte-ywteqx");
     			attr_dev(input1, "placeholder", "password");
     			attr_dev(input1, "maxlength", "15");
-    			add_location(input1, file$1, 45, 3, 879);
-    			add_location(span, file$1, 52, 42, 1044);
+    			add_location(input1, file$1, 46, 3, 880);
+    			add_location(span, file$1, 53, 42, 1045);
     			attr_dev(button, "class", "login svelte-ywteqx");
-    			add_location(button, file$1, 52, 3, 1005);
+    			add_location(button, file$1, 53, 3, 1006);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -25033,14 +25033,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(37:2) {:else}",
+    		source: "(38:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:2) {#if loggedIn == true}
+    // (35:2) {#if loggedIn == true}
     function create_if_block(ctx) {
     	let h3;
     	let t0;
@@ -25059,8 +25059,8 @@ var app = (function () {
     			t1 = text("Privsek");
     			t2 = space();
     			create_component(list.$$.fragment);
-    			add_location(br, file$1, 34, 14, 697);
-    			add_location(h3, file$1, 34, 3, 686);
+    			add_location(br, file$1, 35, 14, 698);
+    			add_location(h3, file$1, 35, 3, 687);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -25092,7 +25092,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(34:2) {#if loggedIn == true}",
+    		source: "(35:2) {#if loggedIn == true}",
     		ctx
     	});
 
@@ -25126,8 +25126,8 @@ var app = (function () {
     			section = element("section");
     			if_block1.c();
     			attr_dev(section, "class", "svelte-ywteqx");
-    			add_location(section, file$1, 32, 1, 648);
-    			add_location(body, file$1, 26, 0, 515);
+    			add_location(section, file$1, 33, 1, 649);
+    			add_location(body, file$1, 27, 0, 516);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -25217,7 +25217,7 @@ var app = (function () {
     	}
 
     	function logIn() {
-    		if (usr != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.pUSER || passwd != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"rivsek","pPASSWD":"12345"}}.env.pPASSWD) {
+    		if (usr != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.pUSER || passwd != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"pman","pPASSWD":"rivsek"}}.env.pPASSWD) {
     			return alert("Wrong login info!\nnot privsek maybe????");
     		} else {
     			$$invalidate(0, loggedIn = true);

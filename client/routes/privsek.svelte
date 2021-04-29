@@ -1,6 +1,7 @@
 <script>
 	import "../src/global.css";
 	import List from '../other/list.svelte'
+
 	let loggedIn = false,
 		usr,
 		passwd;

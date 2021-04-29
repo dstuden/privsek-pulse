@@ -22,7 +22,7 @@
 
 		let send = confirm(`Your final request is:\n` + amount + "\n" + desc);
 		
-		if(true){
+		if(send==true){
 			let date = new Date().toUTCString();
 			db.collection("orders").add({
 				name: user.displayName,
