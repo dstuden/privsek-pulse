@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     res.sendFile( path.resolve(__dirname, "client", "public", "index.html"));
 })
 
-app.listen(port, err => {
+app.listen(port||5000, err => {
     if(err) console.log(err);
     console.log(`Server listening on port ${port}`);
 })
