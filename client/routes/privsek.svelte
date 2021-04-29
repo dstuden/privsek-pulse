@@ -1,6 +1,6 @@
 <script>
 	import "../src/global.css";
-	
+	import List from '../other/list.svelte'
 	let loggedIn = false,
 		usr,
 		passwd;
@@ -10,7 +10,7 @@
 	}
 
 	function logIn() {
-		if (usr != "rivsek" || passwd != "12345") {
+		if (usr != __myapp.env.pUSER || passwd != __myapp.env.pPASSWD) {
 			return alert("Wrong login info!\nnot privsek maybe????");
 		} else {
 			loggedIn = true;
@@ -26,25 +26,14 @@
 
 <body>
 	{#if loggedIn == true}
-		<div class="logout">
-			<button class="button" on:click={logOut}>Log Out</button>
+		<div class="profile">
+			<button class="logout" on:click={logOut}>Log Out</button>
 		</div>
 	{/if}
 	<section>
 		{#if loggedIn == true}
 			<h3>Welcome<br />Privsek</h3>
-			<input
-				type="text"
-				class="ammount"
-				placeholder="amount"
-				maxlength="15"
-			/>
-			<textarea
-				class="note"
-				placeholder="note for rivsek"
-				maxlength="100"
-			/>
-			<button class="button"><span>Request</span></button>
+			<List/>
 		{:else}
 			<h3>Welcome</h3>
 			<input
@@ -61,15 +50,36 @@
 				maxlength="15"
 				bind:value={passwd}
 			/>
-			<button class="button" on:click={logIn}><span>Log In</span></button>
+			<button class="login" on:click={logIn}><span>Log In</span></button>
 		{/if}
 	</section>
 </body>
 
 <style>
-	.logout {
+	.profile {
 		text-align: right;
 		padding: 1em;
+	}
+
+	.logout {
+		background: #dbdbdb;
+		border: #fa9f55 0.2em solid;
+		padding: 0.1em;
+	}
+
+	.logout:active {
+		background: #dbdbdb;
+		border: #ff5e00 0.2em solid;
+	}
+
+	.login {
+		background: #dbdbdb;
+		border: #fa9f55 0.2em solid;
+		padding: 0.5em;
+	}
+	.login:active {
+		background: #dbdbdb;
+		border: #ff5e00 0.2em solid;
 	}
 
 	section {
@@ -78,24 +88,10 @@
 		align-content: center;
 	}
 
-	h3 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 3em;
-		padding-top: 1em;
-		font-weight: 100;
-	}
-
 	input[type="text"],
 	input[type="password"] {
 		width: 100%;
 		padding: 1em 0.5em;
 		box-sizing: border-box;
-	}
-
-	textarea {
-		min-width: 20em;
-		min-height: 5em;
-		resize: none;
 	}
 </style>

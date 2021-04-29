@@ -3,7 +3,7 @@
 	// parts of site
 	import Login from "../other/login.svelte"
 	// firebase things
-	import { auth } from "../../firebase.js";
+	import { auth, db } from "../../firebase.js";
 	import { authState } from "rxfire/auth";
 	// logout function
 	import { logout } from '../../auth/logout.js';
@@ -20,7 +20,18 @@
 		if (amount < 1 || Number.isNaN(amount) == true || amount > 100)
 			return alert("Amount not valid!");
 
-		confirm(`Your final request is:\n` + amount + "\n" + desc);
+		let send = confirm(`Your final request is:\n` + amount + "\n" + desc);
+		
+		if(true){
+			let date = new Date().toUTCString();
+			db.collection("orders").add({
+				name: user.displayName,
+				id: user.uid,
+				amount: amount,
+				description: desc,
+				date: date,
+			})
+		}
 	}
 
 </script>
@@ -95,11 +106,11 @@
 
 	.request {
 		padding: 0.5em;
-		border: 0.15em #ff5e00 solid;
+		border: 0.2em #ff5e00 solid;
 	}
 
 	.request:active {
-		border: 0.15em #fa9f55 solid;
+		border: 0.2em #fa9f55 solid;
 		background: #ff5e00;
 	}
 
