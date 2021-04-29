@@ -1,0 +1,47 @@
+nav.svelte-1wbuy0l{padding:0.5em;text-align:left;position:fixed;z-index:1}a.svelte-1wbuy0l{color:#ff3e00;text-decoration:none}footer.svelte-1wbuy0l{position:fixed;z-index:1;background:#d6d6d6;padding:0.6em 0 0.6em 0;width:100%;bottom:0}.logout.svelte-1wd6w0c{text-align:right;padding:1em}section.svelte-1wd6w0c{display:grid;justify-content:center;align-content:center}h3.svelte-1wd6w0c{color:#ff3e00;text-transform:uppercase;font-size:3em;padding-top:1em;font-weight:100}input[type="text"].svelte-1wd6w0c,input[type="password"].svelte-1wd6w0c{width:100%;padding:1em 0.5em;box-sizing:border-box}textarea.svelte-1wd6w0c{min-width:20em;min-height:5em;resize:none}img.svelte-1ay1hba.svelte-1ay1hba{border-radius:1em;text-align:right}.logout.svelte-1ay1hba.svelte-1ay1hba{text-align:right;padding:1em}.profile.svelte-1ay1hba.svelte-1ay1hba{padding:0.1em;border-radius:0.2em;border:0.15em #ff5e00 solid}.profile.svelte-1ay1hba.svelte-1ay1hba:active{background:#fc6b17;border:0.15em #fa9f55 solid}.dropdown.svelte-1ay1hba.svelte-1ay1hba{position:relative;display:inline-block}.request.svelte-1ay1hba.svelte-1ay1hba{padding:0.5em;border:0.15em #ff5e00 solid}.request.svelte-1ay1hba.svelte-1ay1hba:active{border:0.15em #fa9f55 solid;background:#ff5e00}.dropdown-content.svelte-1ay1hba.svelte-1ay1hba{display:none;position:absolute;min-width:5em;z-index:1}.dropdown.svelte-1ay1hba:hover .dropdown-content.svelte-1ay1hba{display:block;right:0}body {
+    text-align: center;
+}
+
+button {
+    background: #f59140;
+    border-radius: 0.5em;
+    border: none;
+}
+
+button:active {
+    border: black;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+h1 {
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 7em;
+    font-weight: 100;
+}
+
+h3 {
+    color: #ff3e00;
+    max-width: 30em;
+    text-transform: uppercase;
+    font-size: 3em;
+    padding-top: 1em;
+    font-weight: 100;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 1em 0.5em;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-width: 20em;
+    min-height: 5em;
+    resize: none;
+}.loginButton.svelte-86irot{background:#dbdbdb;border:#fa9f55 0.2em solid;display:flex;align-items:center}.loginButton.svelte-86irot:active{background:#dbdbdb;border:#ff5e00 0.2em solid}

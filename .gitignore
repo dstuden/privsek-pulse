@@ -1,0 +1,4 @@
+node_modules
+.env
+./client/public/build/
+./cliet/.DS_Store
