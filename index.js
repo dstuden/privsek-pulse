@@ -10,5 +10,5 @@ app.get("/", (req, res) => {
 
 app.listen(process.env.PORT||3000, err => {
     if(err) console.log(err);
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${process.env.PORT}`);
 })
