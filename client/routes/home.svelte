@@ -1,7 +1,5 @@
 <script>
 	import "../src/global.css";
-	import { fly } from 'svelte/transition';
-
 	// parts of site
 	import Login from "../other/login.svelte"
 	// firebase things
