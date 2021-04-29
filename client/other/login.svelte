@@ -1,6 +1,6 @@
 <script>
-    import {loginGithub} from '../auth/loginGithub.js';
-	import {loginGoogle} from '../auth/loginGoogle.js';
+    import {loginGithub} from '../../auth/loginGithub.js';
+	import {loginGoogle} from '../../auth/loginGoogle.js';
 </script>
 
 <h1 style="font-style: italic;">PP</h1>

@@ -23137,8 +23137,8 @@ var app = (function () {
                 // checks for the another account error
                 console.log(error);
                 if (error.code === "auth/account-exists-with-different-credential") {
-                    alert("You already have an account registered!\nLogging you in...");
                     auth.signInWithRedirect(googleProvider);
+                    console.log('Your email address was already registered!');
                 }
             }
         );
@@ -23179,19 +23179,19 @@ var app = (function () {
     			img1 = element("img");
     			t4 = text("Login with Google");
     			set_style(h1, "font-style", "italic");
-    			add_location(h1, file$3, 5, 0, 129);
+    			add_location(h1, file$3, 5, 0, 135);
     			if (img0.src !== (img0_src_value = "https://image.flaticon.com/icons/svg/25/25231.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "google-logo");
     			attr_dev(img0, "width", "30");
-    			add_location(img0, file$3, 7, 5, 225);
+    			add_location(img0, file$3, 7, 5, 231);
     			attr_dev(button0, "class", "loginButton svelte-86irot");
-    			add_location(button0, file$3, 6, 0, 169);
+    			add_location(button0, file$3, 6, 0, 175);
     			if (img1.src !== (img1_src_value = "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "google-logo");
     			attr_dev(img1, "width", "30");
-    			add_location(img1, file$3, 14, 5, 429);
+    			add_location(img1, file$3, 14, 5, 435);
     			attr_dev(button1, "class", "loginButton svelte-86irot");
-    			add_location(button1, file$3, 13, 0, 373);
+    			add_location(button1, file$3, 13, 0, 379);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23948,19 +23948,19 @@ var app = (function () {
     			div0 = element("div");
     			button = element("button");
     			button.textContent = "Log Out";
-    			attr_dev(img, "class", "dropbtn svelte-1ay1hba");
+    			attr_dev(img, "class", "dropbtn svelte-h4vml8");
     			if (img.src !== (img_src_value = /*user*/ ctx[0].photoURL)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "50");
     			attr_dev(img, "alt", "user avatar");
-    			add_location(img, file$2, 33, 4, 762);
-    			attr_dev(button, "class", "profile svelte-1ay1hba");
-    			add_location(button, file$2, 40, 5, 899);
-    			attr_dev(div0, "class", "dropdown-content svelte-1ay1hba");
-    			add_location(div0, file$2, 39, 4, 863);
-    			attr_dev(div1, "class", "dropdown svelte-1ay1hba");
-    			add_location(div1, file$2, 32, 3, 735);
-    			attr_dev(div2, "class", "logout svelte-1ay1hba");
-    			add_location(div2, file$2, 31, 2, 711);
+    			add_location(img, file$2, 33, 4, 765);
+    			attr_dev(button, "class", "profile svelte-h4vml8");
+    			add_location(button, file$2, 40, 5, 902);
+    			attr_dev(div0, "class", "dropdown-content svelte-h4vml8");
+    			add_location(div0, file$2, 39, 4, 866);
+    			attr_dev(div1, "class", "dropdown svelte-h4vml8");
+    			add_location(div1, file$2, 32, 3, 738);
+    			attr_dev(div2, "class", "logout svelte-h4vml8");
+    			add_location(div2, file$2, 31, 2, 714);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -24069,20 +24069,20 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			span.textContent = "Request";
-    			add_location(br, file$2, 47, 14, 1033);
-    			add_location(h3, file$2, 47, 3, 1022);
+    			add_location(br, file$2, 47, 14, 1036);
+    			add_location(h3, file$2, 47, 3, 1025);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "class", "ammount");
     			attr_dev(input, "placeholder", "amount in €");
-    			add_location(input, file$2, 48, 3, 1066);
+    			add_location(input, file$2, 48, 3, 1069);
     			attr_dev(textarea, "class", "note");
     			attr_dev(textarea, "maxlength", "100");
     			attr_dev(textarea, "placeholder", "Note for rivsek");
-    			add_location(textarea, file$2, 55, 3, 1186);
-    			add_location(span, file$2, 62, 5, 1349);
-    			attr_dev(button, "class", "request svelte-1ay1hba");
-    			add_location(button, file$2, 61, 3, 1298);
+    			add_location(textarea, file$2, 55, 3, 1189);
+    			add_location(span, file$2, 62, 5, 1352);
+    			attr_dev(button, "class", "request svelte-h4vml8");
+    			add_location(button, file$2, 61, 3, 1301);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -24172,8 +24172,8 @@ var app = (function () {
     			t = space();
     			section = element("section");
     			if_block1.c();
-    			add_location(section, file$2, 45, 1, 996);
-    			add_location(body, file$2, 29, 0, 690);
+    			add_location(section, file$2, 45, 1, 999);
+    			add_location(body, file$2, 29, 0, 693);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

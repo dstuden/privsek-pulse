@@ -8,7 +8,7 @@
 	import { auth } from "../../firebase.js";
 	import { authState } from "rxfire/auth";
 	// logout function
-	import { logout } from '../auth/logout.js';
+	import { logout } from '../../auth/logout.js';
 
 	let user;
 
@@ -78,16 +78,16 @@
 		text-align: right;
 		padding: 1em;
 	}
-
+	
 	.profile {
+		background: #dbdbdb;
+		border: #fa9f55 0.2em solid;
 		padding: 0.1em;
-		border-radius: 0.2em;
-		border: 0.15em #ff5e00 solid;
 	}
 
 	.profile:active {
-		background: #fc6b17;
-		border: 0.15em #fa9f55 solid;
+		background: #dbdbdb;
+		border: #ff5e00 0.2em solid;
 	}
 
 	.dropdown {
