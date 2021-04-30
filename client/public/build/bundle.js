@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -23947,15 +23947,15 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*user*/ ctx[0].photoURL)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "50");
     			attr_dev(img, "alt", "user avatar");
-    			add_location(img, file$3, 42, 4, 940);
+    			add_location(img, file$3, 42, 4, 946);
     			attr_dev(button, "class", "profile svelte-e04kl8");
-    			add_location(button, file$3, 49, 5, 1077);
+    			add_location(button, file$3, 49, 5, 1083);
     			attr_dev(div0, "class", "dropdown-content svelte-e04kl8");
-    			add_location(div0, file$3, 48, 4, 1041);
+    			add_location(div0, file$3, 48, 4, 1047);
     			attr_dev(div1, "class", "dropdown svelte-e04kl8");
-    			add_location(div1, file$3, 41, 3, 913);
+    			add_location(div1, file$3, 41, 3, 919);
     			attr_dev(div2, "class", "logout svelte-e04kl8");
-    			add_location(div2, file$3, 40, 2, 889);
+    			add_location(div2, file$3, 40, 2, 895);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -24064,20 +24064,20 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			span.textContent = "Request";
-    			add_location(br, file$3, 56, 14, 1211);
-    			add_location(h3, file$3, 56, 3, 1200);
+    			add_location(br, file$3, 56, 14, 1217);
+    			add_location(h3, file$3, 56, 3, 1206);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "class", "ammount");
     			attr_dev(input, "placeholder", "amount in €");
-    			add_location(input, file$3, 57, 3, 1244);
+    			add_location(input, file$3, 57, 3, 1250);
     			attr_dev(textarea, "class", "note");
     			attr_dev(textarea, "maxlength", "100");
     			attr_dev(textarea, "placeholder", "Note for rivsek");
-    			add_location(textarea, file$3, 64, 3, 1364);
-    			add_location(span, file$3, 71, 5, 1527);
+    			add_location(textarea, file$3, 64, 3, 1370);
+    			add_location(span, file$3, 71, 5, 1533);
     			attr_dev(button, "class", "request svelte-e04kl8");
-    			add_location(button, file$3, 70, 3, 1476);
+    			add_location(button, file$3, 70, 3, 1482);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -24167,8 +24167,8 @@ var app = (function () {
     			t = space();
     			section = element("section");
     			if_block1.c();
-    			add_location(section, file$3, 54, 1, 1174);
-    			add_location(body, file$3, 38, 0, 868);
+    			add_location(section, file$3, 54, 1, 1180);
+    			add_location(body, file$3, 38, 0, 874);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -24258,9 +24258,9 @@ var app = (function () {
     	function alertOrder() {
     		if (amount == "") return alert("No amount specified!");
     		if (amount < 1 || Number.isNaN(amount) == true || amount > 100) return alert("Amount not valid!");
-    		confirm(`Your final request is:\n` + amount + "\n" + desc);
+    		let send = confirm(`Your final request is:\n` + amount + "\n" + desc);
 
-    		{
+    		if (send == true) {
     			let date = new Date().toUTCString();
 
     			db.collection("orders").add({
