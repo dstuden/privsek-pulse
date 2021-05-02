@@ -5,9 +5,10 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
-import {config} from 'dotenv';
 import replace from '@rollup/plugin-replace';
+import { config } from 'dotenv';
 
+config({ path: '../.env' });
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -63,14 +64,21 @@ export default {
 		commonjs(),
 
 		replace({
-			// stringify the object       
 			__myapp: JSON.stringify({
-			  env: {
-				isProd: production,
-				...config({path: '../.env'}).parsed // attached the .env config
-			  }
+				env: {
+					isProd: production,
+					apiKey: process.env.apiKey,
+					authDomain: process.env.authDomain,
+					projectId: process.env.projectId,
+					storageBucket: process.env.storageBucket,
+					messagingSenderId: process.env.messagingSenderId,
+					appId: process.env.appId,
+					measurementId: process.env.measurementId,
+					pUSER: process.env.pUSER,
+					pPASSWD: process.env.pPASSWD
+				}
 			}),
-		  }),
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
