@@ -12,21 +12,15 @@
 		usr,
 		passwd;
 
-	if (localStorage.getItem("validated")) {
-		loggedIn = true;
-	}
-
 	function logIn() {
 		if (usr != __myapp.env.pUSER || passwd != __myapp.env.pPASSWD) {
 			return alert("Wrong login info!\nnot privsek maybe????");
 		} else {
 			loggedIn = true;
-			localStorage.setItem("validated", loggedIn);
 		}
 	}
 
 	function logOut() {
-		localStorage.removeItem("validated");
 		loggedIn = false;
 	}
 </script>

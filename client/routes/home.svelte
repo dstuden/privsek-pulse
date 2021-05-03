@@ -1,8 +1,8 @@
 <script>
 	import "../src/global.css";
 	import { fade, fly } from "svelte/transition";
-	import Icon from 'svelte-awesome';
-    import {times} from 'svelte-awesome/icons';
+	import Icon from "svelte-awesome";
+	import { times } from "svelte-awesome/icons";
 	// parts of site
 	import Login from "../other/login.svelte";
 	// firebase things
@@ -10,7 +10,6 @@
 	import { authState } from "rxfire/auth";
 	// logout function
 	import { logout } from "../../auth/logout.js";
-	import { database } from "svelte-awesome/icons";
 
 	let mode = "normal",
 		history = false,
@@ -30,23 +29,44 @@
 		desc = "";
 
 	function alertOrder() {
-		if (amount == "") return alert("No amount specified!");
-		if (amount < 1 || Number.isNaN(amount) == true || amount > 100)
+		if (amount === "") return alert("No amount specified!");
+		if (amount < 0 || Number.isNaN(amount) == true || amount > 100)
 			return alert("Amount not valid!");
 
 		let send = confirm(`Your final request is:\n` + amount + "\n" + desc);
 
 		if (send == true) {
-			let date = new Date().toUTCString();
-			db.collection("orders").add({
-				name: user.displayName,
-				id: user.uid,
+			let date =
+				new Date().toLocaleTimeString() +
+				" " +
+				new Date().toLocaleDateString();
+
+			db.collection(user.uid).add({
 				amount: amount,
 				description: desc,
 				date: date,
 			});
 
-			db.collection(user.uid).add({
+			let userInfo = db.collection(user.uid).doc("userInfo");
+			userInfo.get().then((n) => {
+				if (!n.exists) {
+					userInfo.set({
+						balance: amount,
+					});
+				} else {
+					userInfo.get().then((doc) => {
+						let usrBal = doc.data().balance;
+
+						userInfo.update({
+							balance: usrBal + amount,
+						});
+					});
+				}
+			});
+
+			db.collection("orders").add({
+				name: user.displayName,
+				id: user.uid,
 				amount: amount,
 				description: desc,
 				date: date,
@@ -55,8 +75,8 @@
 	}
 
 	function removeOrder(itemID) {
-        db.collection("approved").doc(itemID).delete();
-    }
+		db.collection("approved").doc(itemID).delete();
+	}
 </script>
 
 <body>
@@ -132,10 +152,10 @@
 								<p>{object.data().amount}</p>
 								<p>{object.data().description}</p>
 								<button
-								class="manageButton"
-								on:click={removeOrder(object.id)}
-								><Icon data={times} /></button
-							>
+									class="manageButton"
+									on:click={removeOrder(object.id)}
+									><Icon data={times} /></button
+								>
 							</div>
 							<br />
 						{/if}
@@ -149,7 +169,7 @@
 				<input
 					class={mode === "normal" ? "inputNormal" : "inputSmall"}
 					type="number"
-					min="1"
+					min="0"
 					placeholder="amount in €"
 					bind:value={amount}
 				/>
@@ -236,10 +256,10 @@
 	}
 
 	.manageButton {
-        border-radius: 50%;
-        background: #fa9f55;
-        width: 2em;
-    }
+		border-radius: 50%;
+		background: #fa9f55;
+		width: 2em;
+	}
 
 	.history {
 		position: absolute;
@@ -248,7 +268,7 @@
 		word-wrap: break-word;
 		max-height: 50%;
 		-ms-overflow-style: none;
-  		scrollbar-width: none;
+		scrollbar-width: none;
 	}
 
 	.historySmall {
@@ -259,15 +279,15 @@
 		font-size: 0.8em;
 		max-height: 80%;
 		-ms-overflow-style: none;
-  		scrollbar-width: none;
+		scrollbar-width: none;
 	}
 
 	.history::-webkit-scrollbar {
-    	display: none;
+		display: none;
 	}
 
 	.historySmall::-webkit-scrollbar {
-    	display: none;
+		display: none;
 	}
 
 	.inputs {
