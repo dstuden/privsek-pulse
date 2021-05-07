@@ -11,15 +11,10 @@
 	// logout function
 	import { logout } from "../../auth/logout.js";
 
-	let mode = "normal",
-		history = false,
+	let history = false,
 		accepted = false,
 		arr1 = [],
 		arr2 = [];
-
-	const width = screen.width;
-
-	if (width <= 320) mode = "small";
 
 	let user;
 
@@ -122,12 +117,9 @@
 	<section>
 		{#if user}
 			{#if history == true}
-				<div
-					class={mode === "normal" ? "history" : "historySmall"}
-					transition:fly={{ x: 20, duration: 300 }}
-				>
+				<div class="history" transition:fly={{ x: 20, duration: 300 }}>
 					{#each arr1 as object}
-						<div class={mode === "normal" ? "items" : "itemsSmall"}>
+						<div class="items">
 							<p>{object.data().date}</p>
 							<p>{object.data().amount + "€"}</p>
 							<p>{object.data().description}</p>
@@ -137,17 +129,10 @@
 				</div>
 			{/if}
 			{#if accepted == true}
-				<div
-					class={mode === "normal" ? "history" : "historySmall"}
-					transition:fly={{ x: 20, duration: 300 }}
-				>
+				<div class="history" transition:fly={{ x: 20, duration: 300 }}>
 					{#each arr2 as object}
 						{#if object.data().id == user.uid}
-							<div
-								class={mode === "normal"
-									? "items"
-									: "itemsSmall"}
-							>
+							<div class="items">
 								<p>{object.data().date}</p>
 								<p>{object.data().amount}</p>
 								<p>{object.data().description}</p>
@@ -162,12 +147,12 @@
 					{/each}
 				</div>
 			{/if}
-			<h3 class={mode === "small" ? "h3Small" : ""}>
+			<h3 class="h3Small">
 				Welcome<br />{user.displayName}
 			</h3>
 			<div class="inputs">
 				<input
-					class={mode === "normal" ? "inputNormal" : "inputSmall"}
+					class="inputNormal"
 					type="number"
 					min="0"
 					placeholder="amount in €"
@@ -175,15 +160,14 @@
 				/>
 				<br />
 				<textarea
-					class={mode === "normal" ? "textNormal" : "textSmall"}
+					class="textNormal"
 					maxlength="100"
 					placeholder="Note for rivsek"
 					bind:value={desc}
 				/>
 				<br />
-				<button
-					class={mode === "normal" ? "request" : "requestSmall"}
-					on:click={alertOrder}><span>Request</span></button
+				<button class="request" on:click={alertOrder}
+					><span>Request</span></button
 				>
 			</div>
 		{:else}
@@ -220,34 +204,11 @@
 		display: inline-block;
 	}
 
-	.request {
-		padding: 0.5em;
-		border: 0.2em #ff5e00 solid;
-		width: 17em;
-	}
-
-	.requestSmall {
-		padding: 0.5em;
-		border: 0.2em #ff5e00 solid;
-		width: 12em;
-	}
-
-	.request:active {
-		border: 0.2em #fa9f55 solid;
-		background: #ff5e00;
-	}
-
-	.requestSmall:active {
-		border: 0.2em #fa9f55 solid;
-		background: #ff5e00;
-	}
-
 	.dropdown-content {
 		display: none;
 		position: absolute;
 		max-height: 5em;
 		z-index: 1;
-		background-color: #dbdbdb;
 	}
 
 	.dropdown:hover .dropdown-content {
@@ -261,37 +222,23 @@
 		width: 2em;
 	}
 
+	.inputs {
+		text-align: center;
+	}
+
 	.history {
 		position: absolute;
 		right: 1em;
 		overflow: auto;
+		width: 15em;
 		word-wrap: break-word;
 		max-height: 50%;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}
 
-	.historySmall {
-		position: absolute;
-		right: 0;
-		overflow: auto;
-		word-wrap: break-word;
-		font-size: 0.8em;
-		max-height: 80%;
-		-ms-overflow-style: none;
-		scrollbar-width: none;
-	}
-
 	.history::-webkit-scrollbar {
 		display: none;
-	}
-
-	.historySmall::-webkit-scrollbar {
-		display: none;
-	}
-
-	.inputs {
-		text-align: center;
 	}
 
 	.items {
@@ -302,11 +249,52 @@
 		max-width: 20em;
 	}
 
-	.itemsSmall {
-		background: #dbdbdb;
-		border: #ff3e00 0.2em solid;
+	.request {
 		padding: 0.5em;
-		text-align: center;
-		max-width: 15em;
+		border: 0.2em #ff5e00 solid;
+		width: 17em;
+	}
+
+	.request:active {
+		border: 0.2em #fa9f55 solid;
+		background: #ff5e00;
+	}
+
+	@media only screen and (max-width: 600px) {
+
+		.history::-webkit-scrollbar {
+			display: none;
+		}
+
+		.items {
+			background: #dbdbdb;
+			border: #ff3e00 0.2em solid;
+			padding: 0.5em;
+			text-align: center;
+			max-width: 15em;
+		}
+
+		.history {
+			position: absolute;
+			right: 0;
+			overflow: auto;
+			word-wrap: break-word;
+			font-size: 0.9em;
+			max-height: 80%;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+
+		.request:active {
+			border: 0.2em #fa9f55 solid;
+			background: #ff5e00;
+		}
+
+		.request {
+			padding: 0.5em;
+			border: 0.2em #ff5e00 solid;
+			width: 12em;
+		}
+
 	}
 </style>

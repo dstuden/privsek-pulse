@@ -77,9 +77,6 @@ var app = (function () {
             slot.p(slot_context, slot_changes);
         }
     }
-    function null_to_empty(value) {
-        return value == null ? '' : value;
-    }
 
     const is_client = typeof window !== 'undefined';
     let now = is_client
@@ -25311,8 +25308,6 @@ var app = (function () {
 
     function create_fragment$4(ctx) {
     	let h1;
-    	let t0;
-    	let h1_class_value;
     	let t1;
     	let button0;
     	let img0;
@@ -25329,7 +25324,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			t0 = text("PP");
+    			h1.textContent = "PP";
     			t1 = space();
     			button0 = element("button");
     			img0 = element("img");
@@ -25338,28 +25333,27 @@ var app = (function () {
     			button1 = element("button");
     			img1 = element("img");
     			t4 = text("Login with Google");
-    			attr_dev(h1, "class", h1_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h1Small" : "") + " svelte-4p6pw2"));
+    			attr_dev(h1, "class", "h1Small svelte-tn584f");
     			set_style(h1, "font-style", "italic");
-    			add_location(h1, file$4, 11, 0, 227);
+    			add_location(h1, file$4, 5, 0, 142);
     			if (img0.src !== (img0_src_value = "https://image.flaticon.com/icons/svg/25/25231.svg")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "google-logo");
     			attr_dev(img0, "width", "30");
-    			add_location(img0, file$4, 13, 5, 367);
-    			attr_dev(button0, "class", "loginButton svelte-4p6pw2");
-    			add_location(button0, file$4, 12, 0, 311);
+    			add_location(img0, file$4, 7, 5, 254);
+    			attr_dev(button0, "class", "loginButton svelte-tn584f");
+    			add_location(button0, file$4, 6, 0, 198);
     			if (img1.src !== (img1_src_value = "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "google-logo");
     			attr_dev(img1, "width", "30");
-    			add_location(img1, file$4, 20, 5, 571);
-    			attr_dev(button1, "class", "loginButton svelte-4p6pw2");
-    			add_location(button1, file$4, 19, 0, 515);
+    			add_location(img1, file$4, 14, 5, 458);
+    			attr_dev(button1, "class", "loginButton svelte-tn584f");
+    			add_location(button1, file$4, 13, 0, 402);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
-    			append_dev(h1, t0);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, button0, anchor);
     			append_dev(button0, img0);
@@ -25378,11 +25372,7 @@ var app = (function () {
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*mode*/ 1 && h1_class_value !== (h1_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h1Small" : "") + " svelte-4p6pw2"))) {
-    				attr_dev(h1, "class", h1_class_value);
-    			}
-    		},
+    		p: noop$1,
     		i: noop$1,
     		o: noop$1,
     		d: function destroy(detaching) {
@@ -25410,26 +25400,14 @@ var app = (function () {
     function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Login", slots, []);
-    	let mode = "normal";
-    	const width = screen.width;
-    	if (width <= 320) mode = "small";
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Login> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ loginGithub, loginGoogle, mode, width });
-
-    	$$self.$inject_state = $$props => {
-    		if ("mode" in $$props) $$invalidate(0, mode = $$props.mode);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [mode];
+    	$$self.$capture_state = () => ({ loginGithub, loginGoogle });
+    	return [];
     }
 
     class Login extends SvelteComponentDev {
@@ -26107,17 +26085,17 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
+    	child_ctx[14] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
+    	child_ctx[14] = list[i];
     	return child_ctx;
     }
 
-    // (83:1) {#if user}
+    // (78:1) {#if user}
     function create_if_block_4(ctx) {
     	let div2;
     	let div1;
@@ -26148,23 +26126,23 @@ var app = (function () {
     			t4 = space();
     			button2 = element("button");
     			button2.textContent = "Log Out";
-    			attr_dev(img, "class", "dropbtn svelte-166n96d");
-    			if (img.src !== (img_src_value = /*user*/ ctx[5].photoURL)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "class", "dropbtn svelte-tmrdfy");
+    			if (img.src !== (img_src_value = /*user*/ ctx[4].photoURL)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "50");
     			attr_dev(img, "alt", "user avatar");
-    			add_location(img, file$3, 85, 4, 1824);
-    			attr_dev(button0, "class", "profile svelte-166n96d");
-    			add_location(button0, file$3, 92, 5, 1961);
-    			attr_dev(button1, "class", "profile svelte-166n96d");
-    			add_location(button1, file$3, 104, 5, 2245);
-    			attr_dev(button2, "class", "profile svelte-166n96d");
-    			add_location(button2, file$3, 116, 5, 2523);
-    			attr_dev(div0, "class", "dropdown-content svelte-166n96d");
-    			add_location(div0, file$3, 91, 4, 1925);
-    			attr_dev(div1, "class", "dropdown svelte-166n96d");
-    			add_location(div1, file$3, 84, 3, 1797);
-    			attr_dev(div2, "class", "logout svelte-166n96d");
-    			add_location(div2, file$3, 83, 2, 1773);
+    			add_location(img, file$3, 80, 4, 1739);
+    			attr_dev(button0, "class", "profile svelte-tmrdfy");
+    			add_location(button0, file$3, 87, 5, 1876);
+    			attr_dev(button1, "class", "profile svelte-tmrdfy");
+    			add_location(button1, file$3, 99, 5, 2160);
+    			attr_dev(button2, "class", "profile svelte-tmrdfy");
+    			add_location(button2, file$3, 111, 5, 2438);
+    			attr_dev(div0, "class", "dropdown-content svelte-tmrdfy");
+    			add_location(div0, file$3, 86, 4, 1840);
+    			attr_dev(div1, "class", "dropdown svelte-tmrdfy");
+    			add_location(div1, file$3, 79, 3, 1712);
+    			attr_dev(div2, "class", "logout svelte-tmrdfy");
+    			add_location(div2, file$3, 78, 2, 1688);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -26180,8 +26158,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[10], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[11], false, false, false),
+    					listen_dev(button0, "click", /*click_handler*/ ctx[9], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[10], false, false, false),
     					listen_dev(button2, "click", logout, false, false, false)
     				];
 
@@ -26189,7 +26167,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*user*/ 32 && img.src !== (img_src_value = /*user*/ ctx[5].photoURL)) {
+    			if (dirty & /*user*/ 16 && img.src !== (img_src_value = /*user*/ ctx[4].photoURL)) {
     				attr_dev(img, "src", img_src_value);
     			}
     		},
@@ -26204,14 +26182,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(83:1) {#if user}",
+    		source: "(78:1) {#if user}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (189:2) {:else}
+    // (173:2) {:else}
     function create_else_block$1(ctx) {
     	let login;
     	let current;
@@ -26244,43 +26222,39 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(189:2) {:else}",
+    		source: "(173:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:2) {#if user}
+    // (118:2) {#if user}
     function create_if_block$2(ctx) {
     	let t0;
     	let t1;
     	let h3;
     	let t2;
     	let br0;
-    	let t3_value = /*user*/ ctx[5].displayName + "";
+    	let t3_value = /*user*/ ctx[4].displayName + "";
     	let t3;
-    	let h3_class_value;
     	let t4;
     	let div;
     	let input;
-    	let input_class_value;
     	let t5;
     	let br1;
     	let t6;
     	let textarea;
-    	let textarea_class_value;
     	let t7;
     	let br2;
     	let t8;
     	let button;
     	let span;
-    	let button_class_value;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*history*/ ctx[1] == true && create_if_block_3(ctx);
-    	let if_block1 = /*accepted*/ ctx[2] == true && create_if_block_1$2(ctx);
+    	let if_block0 = /*history*/ ctx[0] == true && create_if_block_3(ctx);
+    	let if_block1 = /*accepted*/ ctx[1] == true && create_if_block_1$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -26305,37 +26279,25 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			span.textContent = "Request";
-    			add_location(br0, file$3, 165, 11, 3765);
-    			attr_dev(h3, "class", h3_class_value = /*mode*/ ctx[0] === "small" ? "h3Small" : "");
-    			add_location(h3, file$3, 164, 3, 3707);
-
-    			attr_dev(input, "class", input_class_value = /*mode*/ ctx[0] === "normal"
-    			? "inputNormal"
-    			: "inputSmall");
-
+    			add_location(br0, file$3, 150, 11, 3438);
+    			attr_dev(h3, "class", "h3Small");
+    			add_location(h3, file$3, 149, 3, 3406);
+    			attr_dev(input, "class", "inputNormal");
     			attr_dev(input, "type", "number");
     			attr_dev(input, "min", "0");
     			attr_dev(input, "placeholder", "amount in €");
-    			add_location(input, file$3, 168, 4, 3827);
-    			add_location(br1, file$3, 175, 4, 3995);
-
-    			attr_dev(textarea, "class", textarea_class_value = /*mode*/ ctx[0] === "normal"
-    			? "textNormal"
-    			: "textSmall");
-
+    			add_location(input, file$3, 153, 4, 3500);
+    			add_location(br1, file$3, 160, 4, 3631);
+    			attr_dev(textarea, "class", "textNormal");
     			attr_dev(textarea, "maxlength", "100");
     			attr_dev(textarea, "placeholder", "Note for rivsek");
-    			add_location(textarea, file$3, 176, 4, 4006);
-    			add_location(br2, file$3, 182, 4, 4166);
-    			add_location(span, file$3, 185, 27, 4272);
-
-    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "request"
-    			: "requestSmall") + " svelte-166n96d"));
-
-    			add_location(button, file$3, 183, 4, 4177);
-    			attr_dev(div, "class", "inputs svelte-166n96d");
-    			add_location(div, file$3, 167, 3, 3802);
+    			add_location(textarea, file$3, 161, 4, 3642);
+    			add_location(br2, file$3, 167, 4, 3766);
+    			add_location(span, file$3, 169, 6, 3829);
+    			attr_dev(button, "class", "request svelte-tmrdfy");
+    			add_location(button, file$3, 168, 4, 3777);
+    			attr_dev(div, "class", "inputs svelte-tmrdfy");
+    			add_location(div, file$3, 152, 3, 3475);
     		},
     		m: function mount(target, anchor) {
     			if (if_block0) if_block0.m(target, anchor);
@@ -26349,12 +26311,12 @@ var app = (function () {
     			insert_dev(target, t4, anchor);
     			insert_dev(target, div, anchor);
     			append_dev(div, input);
-    			set_input_value(input, /*amount*/ ctx[6]);
+    			set_input_value(input, /*amount*/ ctx[5]);
     			append_dev(div, t5);
     			append_dev(div, br1);
     			append_dev(div, t6);
     			append_dev(div, textarea);
-    			set_input_value(textarea, /*desc*/ ctx[7]);
+    			set_input_value(textarea, /*desc*/ ctx[6]);
     			append_dev(div, t7);
     			append_dev(div, br2);
     			append_dev(div, t8);
@@ -26364,20 +26326,20 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[12]),
-    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[13]),
-    					listen_dev(button, "click", /*alertOrder*/ ctx[8], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[11]),
+    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[12]),
+    					listen_dev(button, "click", /*alertOrder*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (/*history*/ ctx[1] == true) {
+    			if (/*history*/ ctx[0] == true) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*history*/ 2) {
+    					if (dirty & /*history*/ 1) {
     						transition_in(if_block0, 1);
     					}
     				} else {
@@ -26396,11 +26358,11 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*accepted*/ ctx[2] == true) {
+    			if (/*accepted*/ ctx[1] == true) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
-    					if (dirty & /*accepted*/ 4) {
+    					if (dirty & /*accepted*/ 2) {
     						transition_in(if_block1, 1);
     					}
     				} else {
@@ -26419,36 +26381,14 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*user*/ 32) && t3_value !== (t3_value = /*user*/ ctx[5].displayName + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*user*/ 16) && t3_value !== (t3_value = /*user*/ ctx[4].displayName + "")) set_data_dev(t3, t3_value);
 
-    			if (!current || dirty & /*mode*/ 1 && h3_class_value !== (h3_class_value = /*mode*/ ctx[0] === "small" ? "h3Small" : "")) {
-    				attr_dev(h3, "class", h3_class_value);
+    			if (dirty & /*amount*/ 32 && to_number(input.value) !== /*amount*/ ctx[5]) {
+    				set_input_value(input, /*amount*/ ctx[5]);
     			}
 
-    			if (!current || dirty & /*mode*/ 1 && input_class_value !== (input_class_value = /*mode*/ ctx[0] === "normal"
-    			? "inputNormal"
-    			: "inputSmall")) {
-    				attr_dev(input, "class", input_class_value);
-    			}
-
-    			if (dirty & /*amount*/ 64 && to_number(input.value) !== /*amount*/ ctx[6]) {
-    				set_input_value(input, /*amount*/ ctx[6]);
-    			}
-
-    			if (!current || dirty & /*mode*/ 1 && textarea_class_value !== (textarea_class_value = /*mode*/ ctx[0] === "normal"
-    			? "textNormal"
-    			: "textSmall")) {
-    				attr_dev(textarea, "class", textarea_class_value);
-    			}
-
-    			if (dirty & /*desc*/ 128) {
-    				set_input_value(textarea, /*desc*/ ctx[7]);
-    			}
-
-    			if (!current || dirty & /*mode*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "request"
-    			: "requestSmall") + " svelte-166n96d"))) {
-    				attr_dev(button, "class", button_class_value);
+    			if (dirty & /*desc*/ 64) {
+    				set_input_value(textarea, /*desc*/ ctx[6]);
     			}
     		},
     		i: function intro(local) {
@@ -26479,20 +26419,19 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(123:2) {#if user}",
+    		source: "(118:2) {#if user}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (124:3) {#if history == true}
+    // (119:3) {#if history == true}
     function create_if_block_3(ctx) {
     	let div;
-    	let div_class_value;
     	let div_transition;
     	let current;
-    	let each_value_1 = /*arr1*/ ctx[3];
+    	let each_value_1 = /*arr1*/ ctx[2];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -26508,11 +26447,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "history"
-    			: "historySmall") + " svelte-166n96d"));
-
-    			add_location(div, file$3, 124, 4, 2672);
+    			attr_dev(div, "class", "history svelte-tmrdfy");
+    			add_location(div, file$3, 119, 4, 2587);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -26524,8 +26460,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*mode, arr1*/ 9) {
-    				each_value_1 = /*arr1*/ ctx[3];
+    			if (dirty & /*arr1*/ 4) {
+    				each_value_1 = /*arr1*/ ctx[2];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -26546,12 +26482,6 @@ var app = (function () {
     				}
 
     				each_blocks.length = each_value_1.length;
-    			}
-
-    			if (!current || dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "history"
-    			: "historySmall") + " svelte-166n96d"))) {
-    				attr_dev(div, "class", div_class_value);
     			}
     		},
     		i: function intro(local) {
@@ -26580,28 +26510,27 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(124:3) {#if history == true}",
+    		source: "(119:3) {#if history == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (129:5) {#each arr1 as object}
+    // (121:5) {#each arr1 as object}
     function create_each_block_1$1(ctx) {
     	let div;
     	let p0;
-    	let t0_value = /*object*/ ctx[16].data().date + "";
+    	let t0_value = /*object*/ ctx[14].data().date + "";
     	let t0;
     	let t1;
     	let p1;
-    	let t2_value = /*object*/ ctx[16].data().amount + "€" + "";
+    	let t2_value = /*object*/ ctx[14].data().amount + "€" + "";
     	let t2;
     	let t3;
     	let p2;
-    	let t4_value = /*object*/ ctx[16].data().description + "";
+    	let t4_value = /*object*/ ctx[14].data().description + "";
     	let t4;
-    	let div_class_value;
     	let t5;
     	let br;
 
@@ -26618,12 +26547,12 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = space();
     			br = element("br");
-    			add_location(p0, file$3, 130, 7, 2888);
-    			add_location(p1, file$3, 131, 7, 2923);
-    			add_location(p2, file$3, 132, 7, 2966);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-166n96d"));
-    			add_location(div, file$3, 129, 6, 2824);
-    			add_location(br, file$3, 134, 6, 3020);
+    			add_location(p0, file$3, 122, 7, 2712);
+    			add_location(p1, file$3, 123, 7, 2747);
+    			add_location(p2, file$3, 124, 7, 2790);
+    			attr_dev(div, "class", "items svelte-tmrdfy");
+    			add_location(div, file$3, 121, 6, 2685);
+    			add_location(br, file$3, 126, 6, 2844);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -26639,13 +26568,9 @@ var app = (function () {
     			insert_dev(target, br, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*arr1*/ 8 && t0_value !== (t0_value = /*object*/ ctx[16].data().date + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*arr1*/ 8 && t2_value !== (t2_value = /*object*/ ctx[16].data().amount + "€" + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*arr1*/ 8 && t4_value !== (t4_value = /*object*/ ctx[16].data().description + "")) set_data_dev(t4, t4_value);
-
-    			if (dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-166n96d"))) {
-    				attr_dev(div, "class", div_class_value);
-    			}
+    			if (dirty & /*arr1*/ 4 && t0_value !== (t0_value = /*object*/ ctx[14].data().date + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*arr1*/ 4 && t2_value !== (t2_value = /*object*/ ctx[14].data().amount + "€" + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*arr1*/ 4 && t4_value !== (t4_value = /*object*/ ctx[14].data().description + "")) set_data_dev(t4, t4_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -26658,20 +26583,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(129:5) {#each arr1 as object}",
+    		source: "(121:5) {#each arr1 as object}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (139:3) {#if accepted == true}
+    // (131:3) {#if accepted == true}
     function create_if_block_1$2(ctx) {
     	let div;
-    	let div_class_value;
     	let div_transition;
     	let current;
-    	let each_value = /*arr2*/ ctx[4];
+    	let each_value = /*arr2*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -26691,11 +26615,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "history"
-    			: "historySmall") + " svelte-166n96d"));
-
-    			add_location(div, file$3, 139, 4, 3090);
+    			attr_dev(div, "class", "history svelte-tmrdfy");
+    			add_location(div, file$3, 131, 4, 2914);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -26707,8 +26628,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*mode, removeOrder, arr2, times, user*/ 561) {
-    				each_value = /*arr2*/ ctx[4];
+    			if (dirty & /*removeOrder, arr2, times, user*/ 280) {
+    				each_value = /*arr2*/ ctx[3];
     				validate_each_argument(each_value);
     				let i;
 
@@ -26733,12 +26654,6 @@ var app = (function () {
     				}
 
     				check_outros();
-    			}
-
-    			if (!current || dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal"
-    			? "history"
-    			: "historySmall") + " svelte-166n96d"))) {
-    				attr_dev(div, "class", div_class_value);
     			}
     		},
     		i: function intro(local) {
@@ -26777,31 +26692,30 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(139:3) {#if accepted == true}",
+    		source: "(131:3) {#if accepted == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:6) {#if object.data().id == user.uid}
+    // (134:6) {#if object.data().id == user.uid}
     function create_if_block_2(ctx) {
     	let div;
     	let p0;
-    	let t0_value = /*object*/ ctx[16].data().date + "";
+    	let t0_value = /*object*/ ctx[14].data().date + "";
     	let t0;
     	let t1;
     	let p1;
-    	let t2_value = /*object*/ ctx[16].data().amount + "";
+    	let t2_value = /*object*/ ctx[14].data().amount + "";
     	let t2;
     	let t3;
     	let p2;
-    	let t4_value = /*object*/ ctx[16].data().description + "";
+    	let t4_value = /*object*/ ctx[14].data().description + "";
     	let t4;
     	let t5;
     	let button;
     	let icon;
-    	let div_class_value;
     	let t6;
     	let br;
     	let current;
@@ -26825,14 +26739,14 @@ var app = (function () {
     			create_component(icon.$$.fragment);
     			t6 = space();
     			br = element("br");
-    			add_location(p0, file$3, 150, 8, 3383);
-    			add_location(p1, file$3, 151, 8, 3419);
-    			add_location(p2, file$3, 152, 8, 3457);
-    			attr_dev(button, "class", "manageButton svelte-166n96d");
-    			add_location(button, file$3, 153, 8, 3500);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-166n96d"));
-    			add_location(div, file$3, 145, 7, 3284);
-    			add_location(br, file$3, 159, 7, 3652);
+    			add_location(p0, file$3, 135, 8, 3082);
+    			add_location(p1, file$3, 136, 8, 3118);
+    			add_location(p2, file$3, 137, 8, 3156);
+    			attr_dev(button, "class", "manageButton svelte-tmrdfy");
+    			add_location(button, file$3, 138, 8, 3199);
+    			attr_dev(div, "class", "items svelte-tmrdfy");
+    			add_location(div, file$3, 134, 7, 3054);
+    			add_location(br, file$3, 144, 7, 3351);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -26856,7 +26770,7 @@ var app = (function () {
     					button,
     					"click",
     					function () {
-    						if (is_function(/*removeOrder*/ ctx[9](/*object*/ ctx[16].id))) /*removeOrder*/ ctx[9](/*object*/ ctx[16].id).apply(this, arguments);
+    						if (is_function(/*removeOrder*/ ctx[8](/*object*/ ctx[14].id))) /*removeOrder*/ ctx[8](/*object*/ ctx[14].id).apply(this, arguments);
     					},
     					false,
     					false,
@@ -26868,13 +26782,9 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*arr2*/ 16) && t0_value !== (t0_value = /*object*/ ctx[16].data().date + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*arr2*/ 16) && t2_value !== (t2_value = /*object*/ ctx[16].data().amount + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*arr2*/ 16) && t4_value !== (t4_value = /*object*/ ctx[16].data().description + "")) set_data_dev(t4, t4_value);
-
-    			if (!current || dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-166n96d"))) {
-    				attr_dev(div, "class", div_class_value);
-    			}
+    			if ((!current || dirty & /*arr2*/ 8) && t0_value !== (t0_value = /*object*/ ctx[14].data().date + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*arr2*/ 8) && t2_value !== (t2_value = /*object*/ ctx[14].data().amount + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*arr2*/ 8) && t4_value !== (t4_value = /*object*/ ctx[14].data().description + "")) set_data_dev(t4, t4_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -26899,16 +26809,16 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(145:6) {#if object.data().id == user.uid}",
+    		source: "(134:6) {#if object.data().id == user.uid}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:5) {#each arr2 as object}
+    // (133:5) {#each arr2 as object}
     function create_each_block$1(ctx) {
-    	let show_if = /*object*/ ctx[16].data().id == /*user*/ ctx[5].uid;
+    	let show_if = /*object*/ ctx[14].data().id == /*user*/ ctx[4].uid;
     	let if_block_anchor;
     	let current;
     	let if_block = show_if && create_if_block_2(ctx);
@@ -26924,13 +26834,13 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*arr2, user*/ 48) show_if = /*object*/ ctx[16].data().id == /*user*/ ctx[5].uid;
+    			if (dirty & /*arr2, user*/ 24) show_if = /*object*/ ctx[14].data().id == /*user*/ ctx[4].uid;
 
     			if (show_if) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*arr2, user*/ 48) {
+    					if (dirty & /*arr2, user*/ 24) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -26968,7 +26878,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(144:5) {#each arr2 as object}",
+    		source: "(133:5) {#each arr2 as object}",
     		ctx
     	});
 
@@ -26982,12 +26892,12 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block1;
     	let current;
-    	let if_block0 = /*user*/ ctx[5] && create_if_block_4(ctx);
+    	let if_block0 = /*user*/ ctx[4] && create_if_block_4(ctx);
     	const if_block_creators = [create_if_block$2, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*user*/ ctx[5]) return 0;
+    		if (/*user*/ ctx[4]) return 0;
     		return 1;
     	}
 
@@ -27001,8 +26911,8 @@ var app = (function () {
     			t = space();
     			section = element("section");
     			if_block1.c();
-    			add_location(section, file$3, 121, 1, 2620);
-    			add_location(body, file$3, 81, 0, 1752);
+    			add_location(section, file$3, 116, 1, 2535);
+    			add_location(body, file$3, 76, 0, 1667);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27016,7 +26926,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*user*/ ctx[5]) {
+    			if (/*user*/ ctx[4]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -27085,11 +26995,9 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Home", slots, []);
-    	let mode = "normal", history = false, accepted = false, arr1 = [], arr2 = [];
-    	const width = screen.width;
-    	if (width <= 320) mode = "small";
+    	let history = false, accepted = false, arr1 = [], arr2 = [];
     	let user;
-    	const unsubscribe = authState(auth).subscribe(u => $$invalidate(5, user = u));
+    	const unsubscribe = authState(auth).subscribe(u => $$invalidate(4, user = u));
     	let amount = "", desc = "";
 
     	function alertOrder() {
@@ -27134,31 +27042,31 @@ var app = (function () {
     	});
 
     	const click_handler = () => {
-    		$$invalidate(2, accepted = !accepted);
-    		$$invalidate(1, history = false);
+    		$$invalidate(1, accepted = !accepted);
+    		$$invalidate(0, history = false);
 
     		db.collection("approved").orderBy("amount", "desc").onSnapshot(data => {
-    			$$invalidate(4, arr2 = data.docs);
+    			$$invalidate(3, arr2 = data.docs);
     		});
     	};
 
     	const click_handler_1 = () => {
-    		$$invalidate(1, history = !history);
-    		$$invalidate(2, accepted = false);
+    		$$invalidate(0, history = !history);
+    		$$invalidate(1, accepted = false);
 
     		db.collection(user.uid).orderBy("date", "desc").onSnapshot(data => {
-    			$$invalidate(3, arr1 = data.docs);
+    			$$invalidate(2, arr1 = data.docs);
     		});
     	};
 
     	function input_input_handler() {
     		amount = to_number(this.value);
-    		$$invalidate(6, amount);
+    		$$invalidate(5, amount);
     	}
 
     	function textarea_input_handler() {
     		desc = this.value;
-    		$$invalidate(7, desc);
+    		$$invalidate(6, desc);
     	}
 
     	$$self.$capture_state = () => ({
@@ -27171,12 +27079,10 @@ var app = (function () {
     		db,
     		authState,
     		logout,
-    		mode,
     		history,
     		accepted,
     		arr1,
     		arr2,
-    		width,
     		user,
     		unsubscribe,
     		amount,
@@ -27186,14 +27092,13 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("mode" in $$props) $$invalidate(0, mode = $$props.mode);
-    		if ("history" in $$props) $$invalidate(1, history = $$props.history);
-    		if ("accepted" in $$props) $$invalidate(2, accepted = $$props.accepted);
-    		if ("arr1" in $$props) $$invalidate(3, arr1 = $$props.arr1);
-    		if ("arr2" in $$props) $$invalidate(4, arr2 = $$props.arr2);
-    		if ("user" in $$props) $$invalidate(5, user = $$props.user);
-    		if ("amount" in $$props) $$invalidate(6, amount = $$props.amount);
-    		if ("desc" in $$props) $$invalidate(7, desc = $$props.desc);
+    		if ("history" in $$props) $$invalidate(0, history = $$props.history);
+    		if ("accepted" in $$props) $$invalidate(1, accepted = $$props.accepted);
+    		if ("arr1" in $$props) $$invalidate(2, arr1 = $$props.arr1);
+    		if ("arr2" in $$props) $$invalidate(3, arr2 = $$props.arr2);
+    		if ("user" in $$props) $$invalidate(4, user = $$props.user);
+    		if ("amount" in $$props) $$invalidate(5, amount = $$props.amount);
+    		if ("desc" in $$props) $$invalidate(6, desc = $$props.desc);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -27201,7 +27106,6 @@ var app = (function () {
     	}
 
     	return [
-    		mode,
     		history,
     		accepted,
     		arr1,
@@ -27237,23 +27141,23 @@ var app = (function () {
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
-    // (67:21) 
+    // (63:21) 
     function create_if_block_1$1(ctx) {
     	let h4;
     	let t1;
     	let each_1_anchor;
     	let current;
-    	let each_value_1 = /*arr2*/ ctx[2];
+    	let each_value_1 = /*arr2*/ ctx[1];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -27276,7 +27180,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty$1();
-    			add_location(h4, file$2, 67, 4, 1877);
+    			add_location(h4, file$2, 63, 4, 1768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -27290,8 +27194,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*mode, removeOrder, arr2, times*/ 21) {
-    				each_value_1 = /*arr2*/ ctx[2];
+    			if (dirty & /*removeOrder, arr2, times*/ 10) {
+    				each_value_1 = /*arr2*/ ctx[1];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -27348,20 +27252,20 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(67:21) ",
+    		source: "(63:21) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:0) {#if state == 0}
+    // (46:0) {#if state == 0}
     function create_if_block$1(ctx) {
     	let h4;
     	let t1;
     	let each_1_anchor;
     	let current;
-    	let each_value = /*arr1*/ ctx[1];
+    	let each_value = /*arr1*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -27384,7 +27288,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty$1();
-    			add_location(h4, file$2, 51, 4, 1252);
+    			add_location(h4, file$2, 46, 4, 1169);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -27398,8 +27302,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*mode, approveOrder, arr1, removeOrder, times*/ 51) {
-    				each_value = /*arr1*/ ctx[1];
+    			if (dirty & /*approveOrder, arr1, removeOrder, times*/ 25) {
+    				each_value = /*arr1*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
 
@@ -27456,31 +27360,30 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(51:0) {#if state == 0}",
+    		source: "(46:0) {#if state == 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:4) {#each arr2 as object}
+    // (65:4) {#each arr2 as object}
     function create_each_block_1(ctx) {
     	let div;
     	let p0;
-    	let t0_value = /*object*/ ctx[9].data().name + ", " + /*object*/ ctx[9].data().date + "";
+    	let t0_value = /*object*/ ctx[7].data().name + ", " + /*object*/ ctx[7].data().date + "";
     	let t0;
     	let t1;
     	let p1;
-    	let t2_value = /*object*/ ctx[9].data().amount + "";
+    	let t2_value = /*object*/ ctx[7].data().amount + "";
     	let t2;
     	let t3;
     	let p2;
-    	let t4_value = /*object*/ ctx[9].data().description + "";
+    	let t4_value = /*object*/ ctx[7].data().description + "";
     	let t4;
     	let t5;
     	let button;
     	let icon;
-    	let div_class_value;
     	let t6;
     	let br;
     	let current;
@@ -27504,17 +27407,17 @@ var app = (function () {
     			create_component(icon.$$.fragment);
     			t6 = space();
     			br = element("br");
-    			attr_dev(p0, "class", "svelte-16h8nes");
-    			add_location(p0, file$2, 70, 12, 2018);
-    			attr_dev(p1, "class", "svelte-16h8nes");
-    			add_location(p1, file$2, 71, 12, 2086);
-    			attr_dev(p2, "class", "svelte-16h8nes");
-    			add_location(p2, file$2, 72, 12, 2128);
-    			attr_dev(button, "class", "manageButton svelte-16h8nes");
-    			add_location(button, file$2, 73, 12, 2175);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-16h8nes"));
-    			add_location(div, file$2, 69, 4, 1947);
-    			add_location(br, file$2, 77, 8, 2321);
+    			attr_dev(p0, "class", "svelte-oe042w");
+    			add_location(p0, file$2, 66, 12, 1874);
+    			attr_dev(p1, "class", "svelte-oe042w");
+    			add_location(p1, file$2, 67, 12, 1942);
+    			attr_dev(p2, "class", "svelte-oe042w");
+    			add_location(p2, file$2, 68, 12, 1984);
+    			attr_dev(button, "class", "manageButton svelte-oe042w");
+    			add_location(button, file$2, 69, 12, 2031);
+    			attr_dev(div, "class", "items svelte-oe042w");
+    			add_location(div, file$2, 65, 8, 1842);
+    			add_location(br, file$2, 73, 8, 2178);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -27538,7 +27441,7 @@ var app = (function () {
     					button,
     					"click",
     					function () {
-    						if (is_function(/*removeOrder*/ ctx[4](/*object*/ ctx[9].id))) /*removeOrder*/ ctx[4](/*object*/ ctx[9].id).apply(this, arguments);
+    						if (is_function(/*removeOrder*/ ctx[3](/*object*/ ctx[7].id))) /*removeOrder*/ ctx[3](/*object*/ ctx[7].id).apply(this, arguments);
     					},
     					false,
     					false,
@@ -27550,13 +27453,9 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*arr2*/ 4) && t0_value !== (t0_value = /*object*/ ctx[9].data().name + ", " + /*object*/ ctx[9].data().date + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*arr2*/ 4) && t2_value !== (t2_value = /*object*/ ctx[9].data().amount + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*arr2*/ 4) && t4_value !== (t4_value = /*object*/ ctx[9].data().description + "")) set_data_dev(t4, t4_value);
-
-    			if (!current || dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-16h8nes"))) {
-    				attr_dev(div, "class", div_class_value);
-    			}
+    			if ((!current || dirty & /*arr2*/ 2) && t0_value !== (t0_value = /*object*/ ctx[7].data().name + ", " + /*object*/ ctx[7].data().date + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*arr2*/ 2) && t2_value !== (t2_value = /*object*/ ctx[7].data().amount + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*arr2*/ 2) && t4_value !== (t4_value = /*object*/ ctx[7].data().description + "")) set_data_dev(t4, t4_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -27581,33 +27480,32 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(69:4) {#each arr2 as object}",
+    		source: "(65:4) {#each arr2 as object}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:4) {#each arr1 as object}
+    // (48:4) {#each arr1 as object}
     function create_each_block(ctx) {
     	let div;
     	let p0;
-    	let t0_value = /*object*/ ctx[9].data().name + ", " + /*object*/ ctx[9].data().date + "";
+    	let t0_value = /*object*/ ctx[7].data().name + ", " + /*object*/ ctx[7].data().date + "";
     	let t0;
     	let t1;
     	let p1;
-    	let t2_value = /*object*/ ctx[9].data().amount + "€" + "";
+    	let t2_value = /*object*/ ctx[7].data().amount + "€" + "";
     	let t2;
     	let t3;
     	let p2;
-    	let t4_value = /*object*/ ctx[9].data().description + "";
+    	let t4_value = /*object*/ ctx[7].data().description + "";
     	let t4;
     	let t5;
     	let button0;
     	let icon;
     	let t6;
     	let button1;
-    	let div_class_value;
     	let t8;
     	let br;
     	let current;
@@ -27634,19 +27532,19 @@ var app = (function () {
     			button1.textContent = "✔";
     			t8 = space();
     			br = element("br");
-    			attr_dev(p0, "class", "svelte-16h8nes");
-    			add_location(p0, file$2, 54, 12, 1388);
-    			attr_dev(p1, "class", "svelte-16h8nes");
-    			add_location(p1, file$2, 55, 12, 1456);
-    			attr_dev(p2, "class", "svelte-16h8nes");
-    			add_location(p2, file$2, 56, 12, 1504);
-    			attr_dev(button0, "class", "manageButton svelte-16h8nes");
-    			add_location(button0, file$2, 57, 12, 1551);
-    			attr_dev(button1, "class", "manageButton svelte-16h8nes");
-    			add_location(button1, file$2, 60, 12, 1686);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-16h8nes"));
-    			add_location(div, file$2, 53, 8, 1317);
-    			add_location(br, file$2, 64, 8, 1832);
+    			attr_dev(p0, "class", "svelte-oe042w");
+    			add_location(p0, file$2, 49, 12, 1266);
+    			attr_dev(p1, "class", "svelte-oe042w");
+    			add_location(p1, file$2, 50, 12, 1334);
+    			attr_dev(p2, "class", "svelte-oe042w");
+    			add_location(p2, file$2, 51, 12, 1382);
+    			attr_dev(button0, "class", "manageButton svelte-oe042w");
+    			add_location(button0, file$2, 52, 12, 1429);
+    			attr_dev(button1, "class", "manageButton svelte-oe042w");
+    			add_location(button1, file$2, 55, 12, 1565);
+    			attr_dev(div, "class", "items svelte-oe042w");
+    			add_location(div, file$2, 48, 8, 1234);
+    			add_location(br, file$2, 60, 8, 1723);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -27673,7 +27571,7 @@ var app = (function () {
     						button0,
     						"click",
     						function () {
-    							if (is_function(/*removeOrder*/ ctx[4](/*object*/ ctx[9].id))) /*removeOrder*/ ctx[4](/*object*/ ctx[9].id).apply(this, arguments);
+    							if (is_function(/*removeOrder*/ ctx[3](/*object*/ ctx[7].id))) /*removeOrder*/ ctx[3](/*object*/ ctx[7].id).apply(this, arguments);
     						},
     						false,
     						false,
@@ -27683,7 +27581,7 @@ var app = (function () {
     						button1,
     						"click",
     						function () {
-    							if (is_function(/*approveOrder*/ ctx[5](/*object*/ ctx[9].data(), /*object*/ ctx[9].id))) /*approveOrder*/ ctx[5](/*object*/ ctx[9].data(), /*object*/ ctx[9].id).apply(this, arguments);
+    							if (is_function(/*approveOrder*/ ctx[4](/*object*/ ctx[7].data(), /*object*/ ctx[7].id))) /*approveOrder*/ ctx[4](/*object*/ ctx[7].data(), /*object*/ ctx[7].id).apply(this, arguments);
     						},
     						false,
     						false,
@@ -27696,13 +27594,9 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*arr1*/ 2) && t0_value !== (t0_value = /*object*/ ctx[9].data().name + ", " + /*object*/ ctx[9].data().date + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*arr1*/ 2) && t2_value !== (t2_value = /*object*/ ctx[9].data().amount + "€" + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*arr1*/ 2) && t4_value !== (t4_value = /*object*/ ctx[9].data().description + "")) set_data_dev(t4, t4_value);
-
-    			if (!current || dirty & /*mode*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "items" : "itemsSmall") + " svelte-16h8nes"))) {
-    				attr_dev(div, "class", div_class_value);
-    			}
+    			if ((!current || dirty & /*arr1*/ 1) && t0_value !== (t0_value = /*object*/ ctx[7].data().name + ", " + /*object*/ ctx[7].data().date + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*arr1*/ 1) && t2_value !== (t2_value = /*object*/ ctx[7].data().amount + "€" + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*arr1*/ 1) && t4_value !== (t4_value = /*object*/ ctx[7].data().description + "")) set_data_dev(t4, t4_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -27727,7 +27621,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(53:4) {#each arr1 as object}",
+    		source: "(48:4) {#each arr1 as object}",
     		ctx
     	});
 
@@ -27748,8 +27642,8 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*state*/ ctx[3] == 0) return 0;
-    		if (/*state*/ ctx[3] == 1) return 1;
+    		if (/*state*/ ctx[2] == 0) return 0;
+    		if (/*state*/ ctx[2] == 1) return 1;
     		return -1;
     	}
 
@@ -27765,10 +27659,10 @@ var app = (function () {
     			t1 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty$1();
-    			attr_dev(button, "class", "changeState svelte-16h8nes");
-    			add_location(button, file$2, 48, 0, 1152);
-    			attr_dev(div, "class", "stateButton svelte-16h8nes");
-    			add_location(div, file$2, 47, 0, 1126);
+    			attr_dev(button, "class", "changeState svelte-oe042w");
+    			add_location(button, file$2, 43, 4, 1069);
+    			attr_dev(div, "class", "stateButton svelte-oe042w");
+    			add_location(div, file$2, 42, 0, 1039);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27786,7 +27680,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*changeState*/ ctx[6], false, false, false);
+    				dispose = listen_dev(button, "click", /*changeState*/ ctx[5], false, false, false);
     				mounted = true;
     			}
     		},
@@ -27863,19 +27757,16 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("List", slots, []);
-    	let mode = "normal";
-    	const width = screen.width;
-    	if (width <= 320) mode = "small";
     	let arr1 = [], arr2 = [];
     	let state = 0;
     	let collection = ["orders", "approved"];
 
     	db.collection("orders").orderBy("amount", "desc").onSnapshot(data => {
-    		$$invalidate(1, arr1 = data.docs);
+    		$$invalidate(0, arr1 = data.docs);
     	});
 
     	db.collection("approved").orderBy("amount", "desc").onSnapshot(data => {
-    		$$invalidate(2, arr2 = data.docs);
+    		$$invalidate(1, arr2 = data.docs);
     	});
 
     	function removeOrder(itemID) {
@@ -27895,8 +27786,8 @@ var app = (function () {
     	}
 
     	function changeState() {
-    		$$invalidate(3, state++, state);
-    		if (state > 1) $$invalidate(3, state = 0);
+    		$$invalidate(2, state++, state);
+    		if (state > 1) $$invalidate(2, state = 0);
     	}
 
     	const writable_props = [];
@@ -27909,8 +27800,6 @@ var app = (function () {
     		db,
     		Icon,
     		times,
-    		mode,
-    		width,
     		arr1,
     		arr2,
     		state,
@@ -27921,10 +27810,9 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("mode" in $$props) $$invalidate(0, mode = $$props.mode);
-    		if ("arr1" in $$props) $$invalidate(1, arr1 = $$props.arr1);
-    		if ("arr2" in $$props) $$invalidate(2, arr2 = $$props.arr2);
-    		if ("state" in $$props) $$invalidate(3, state = $$props.state);
+    		if ("arr1" in $$props) $$invalidate(0, arr1 = $$props.arr1);
+    		if ("arr2" in $$props) $$invalidate(1, arr2 = $$props.arr2);
+    		if ("state" in $$props) $$invalidate(2, state = $$props.state);
     		if ("collection" in $$props) collection = $$props.collection;
     	};
 
@@ -27932,7 +27820,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [mode, arr1, arr2, state, removeOrder, approveOrder, changeState];
+    	return [arr1, arr2, state, removeOrder, approveOrder, changeState];
     }
 
     class List extends SvelteComponentDev {
@@ -27952,7 +27840,7 @@ var app = (function () {
     /* routes/privsek.svelte generated by Svelte v3.37.0 */
     const file$1 = "routes/privsek.svelte";
 
-    // (29:1) {#if loggedIn == true}
+    // (23:1) {#if loggedIn == true}
     function create_if_block_1(ctx) {
     	let div;
     	let button;
@@ -27964,17 +27852,17 @@ var app = (function () {
     			div = element("div");
     			button = element("button");
     			button.textContent = "Log Out";
-    			attr_dev(button, "class", "logout svelte-1orgq76");
-    			add_location(button, file$1, 30, 3, 511);
-    			attr_dev(div, "class", "profile svelte-1orgq76");
-    			add_location(div, file$1, 29, 2, 486);
+    			attr_dev(button, "class", "logout svelte-107jzd9");
+    			add_location(button, file$1, 24, 3, 422);
+    			attr_dev(div, "class", "profile svelte-107jzd9");
+    			add_location(div, file$1, 23, 2, 397);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, button);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*logOut*/ ctx[5], false, false, false);
+    				dispose = listen_dev(button, "click", /*logOut*/ ctx[4], false, false, false);
     				mounted = true;
     			}
     		},
@@ -27990,40 +27878,35 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(29:1) {#if loggedIn == true}",
+    		source: "(23:1) {#if loggedIn == true}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:2) {:else}
+    // (32:2) {:else}
     function create_else_block(ctx) {
     	let h3;
-    	let t0;
-    	let h3_class_value;
     	let t1;
     	let div;
     	let input0;
-    	let input0_class_value;
     	let t2;
     	let br0;
     	let t3;
     	let input1;
-    	let input1_class_value;
     	let t4;
     	let br1;
     	let t5;
     	let button;
     	let span;
-    	let button_class_value;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
     			h3 = element("h3");
-    			t0 = text("Welcome");
+    			h3.textContent = "Welcome";
     			t1 = space();
     			div = element("div");
     			input0 = element("input");
@@ -28037,38 +27920,37 @@ var app = (function () {
     			button = element("button");
     			span = element("span");
     			span.textContent = "Log In";
-    			attr_dev(h3, "class", h3_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h3Small" : "") + " svelte-1orgq76"));
-    			add_location(h3, file$1, 38, 4, 724);
+    			attr_dev(h3, "class", "h3Small svelte-107jzd9");
+    			add_location(h3, file$1, 32, 3, 606);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", input0_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "usr" : "usrSmall") + " svelte-1orgq76"));
+    			attr_dev(input0, "class", "usr svelte-107jzd9");
     			attr_dev(input0, "placeholder", "username");
     			attr_dev(input0, "maxlength", "15");
-    			add_location(input0, file$1, 40, 4, 815);
-    			add_location(br0, file$1, 47, 4, 974);
+    			add_location(input0, file$1, 34, 4, 667);
+    			add_location(br0, file$1, 41, 4, 789);
     			attr_dev(input1, "type", "password");
-    			attr_dev(input1, "class", input1_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "passwd" : "passwdSmall") + " svelte-1orgq76"));
+    			attr_dev(input1, "class", "passwd svelte-107jzd9");
     			attr_dev(input1, "placeholder", "password");
     			attr_dev(input1, "maxlength", "15");
-    			add_location(input1, file$1, 48, 4, 983);
-    			add_location(br1, file$1, 55, 4, 1155);
-    			add_location(span, file$1, 57, 6, 1248);
-    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "login" : "loginSmall") + " svelte-1orgq76"));
-    			add_location(button, file$1, 56, 4, 1164);
-    			attr_dev(div, "class", "inputs svelte-1orgq76");
-    			add_location(div, file$1, 39, 4, 790);
+    			add_location(input1, file$1, 42, 4, 800);
+    			add_location(br1, file$1, 49, 4, 932);
+    			add_location(span, file$1, 51, 6, 988);
+    			attr_dev(button, "class", "login svelte-107jzd9");
+    			add_location(button, file$1, 50, 4, 943);
+    			attr_dev(div, "class", "inputs svelte-107jzd9");
+    			add_location(div, file$1, 33, 3, 642);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
-    			append_dev(h3, t0);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, div, anchor);
     			append_dev(div, input0);
-    			set_input_value(input0, /*usr*/ ctx[2]);
+    			set_input_value(input0, /*usr*/ ctx[1]);
     			append_dev(div, t2);
     			append_dev(div, br0);
     			append_dev(div, t3);
     			append_dev(div, input1);
-    			set_input_value(input1, /*passwd*/ ctx[3]);
+    			set_input_value(input1, /*passwd*/ ctx[2]);
     			append_dev(div, t4);
     			append_dev(div, br1);
     			append_dev(div, t5);
@@ -28077,37 +27959,21 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[6]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[7]),
-    					listen_dev(button, "click", /*logIn*/ ctx[4], false, false, false)
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[5]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[6]),
+    					listen_dev(button, "click", /*logIn*/ ctx[3], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*mode*/ 1 && h3_class_value !== (h3_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h3Small" : "") + " svelte-1orgq76"))) {
-    				attr_dev(h3, "class", h3_class_value);
+    			if (dirty & /*usr*/ 2 && input0.value !== /*usr*/ ctx[1]) {
+    				set_input_value(input0, /*usr*/ ctx[1]);
     			}
 
-    			if (dirty & /*mode*/ 1 && input0_class_value !== (input0_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "usr" : "usrSmall") + " svelte-1orgq76"))) {
-    				attr_dev(input0, "class", input0_class_value);
-    			}
-
-    			if (dirty & /*usr*/ 4 && input0.value !== /*usr*/ ctx[2]) {
-    				set_input_value(input0, /*usr*/ ctx[2]);
-    			}
-
-    			if (dirty & /*mode*/ 1 && input1_class_value !== (input1_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "passwd" : "passwdSmall") + " svelte-1orgq76"))) {
-    				attr_dev(input1, "class", input1_class_value);
-    			}
-
-    			if (dirty & /*passwd*/ 8 && input1.value !== /*passwd*/ ctx[3]) {
-    				set_input_value(input1, /*passwd*/ ctx[3]);
-    			}
-
-    			if (dirty & /*mode*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "normal" ? "login" : "loginSmall") + " svelte-1orgq76"))) {
-    				attr_dev(button, "class", button_class_value);
+    			if (dirty & /*passwd*/ 4 && input1.value !== /*passwd*/ ctx[2]) {
+    				set_input_value(input1, /*passwd*/ ctx[2]);
     			}
     		},
     		i: noop$1,
@@ -28125,20 +27991,19 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(38:2) {:else}",
+    		source: "(32:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:2) {#if loggedIn == true}
+    // (29:2) {#if loggedIn == true}
     function create_if_block(ctx) {
     	let h3;
     	let t0;
     	let br;
     	let t1;
-    	let h3_class_value;
     	let t2;
     	let list;
     	let current;
@@ -28152,9 +28017,9 @@ var app = (function () {
     			t1 = text("Privsek");
     			t2 = space();
     			create_component(list.$$.fragment);
-    			add_location(br, file$1, 35, 58, 679);
-    			attr_dev(h3, "class", h3_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h3Small" : "") + " svelte-1orgq76"));
-    			add_location(h3, file$1, 35, 3, 624);
+    			add_location(br, file$1, 29, 30, 562);
+    			attr_dev(h3, "class", "h3Small svelte-107jzd9");
+    			add_location(h3, file$1, 29, 3, 535);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -28165,11 +28030,7 @@ var app = (function () {
     			mount_component(list, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*mode*/ 1 && h3_class_value !== (h3_class_value = "" + (null_to_empty(/*mode*/ ctx[0] === "small" ? "h3Small" : "") + " svelte-1orgq76"))) {
-    				attr_dev(h3, "class", h3_class_value);
-    			}
-    		},
+    		p: noop$1,
     		i: function intro(local) {
     			if (current) return;
     			transition_in(list.$$.fragment, local);
@@ -28190,7 +28051,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(35:2) {#if loggedIn == true}",
+    		source: "(29:2) {#if loggedIn == true}",
     		ctx
     	});
 
@@ -28204,12 +28065,12 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block1;
     	let current;
-    	let if_block0 = /*loggedIn*/ ctx[1] == true && create_if_block_1(ctx);
+    	let if_block0 = /*loggedIn*/ ctx[0] == true && create_if_block_1(ctx);
     	const if_block_creators = [create_if_block, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*loggedIn*/ ctx[1] == true) return 0;
+    		if (/*loggedIn*/ ctx[0] == true) return 0;
     		return 1;
     	}
 
@@ -28223,9 +28084,9 @@ var app = (function () {
     			t = space();
     			section = element("section");
     			if_block1.c();
-    			attr_dev(section, "class", "svelte-1orgq76");
-    			add_location(section, file$1, 33, 1, 586);
-    			add_location(body, file$1, 27, 0, 453);
+    			attr_dev(section, "class", "svelte-107jzd9");
+    			add_location(section, file$1, 27, 1, 497);
+    			add_location(body, file$1, 21, 0, 364);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28239,7 +28100,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*loggedIn*/ ctx[1] == true) {
+    			if (/*loggedIn*/ ctx[0] == true) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -28308,21 +28169,18 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Privsek", slots, []);
-    	let mode = "normal";
-    	const width = screen.width;
-    	if (width <= 320) mode = "small";
     	let loggedIn = false, usr, passwd;
 
     	function logIn() {
     		if (usr != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"privsek","pPASSWD":"privsek"}}.env.pUSER || passwd != {"env":{"isProd":false,"apiKey":"AIzaSyBYnm32wXiwCg_zS8Aqa16zQ389xDsFkE4","authDomain":"pogworks-1a6d9.firebaseapp.com","projectId":"pogworks-1a6d9","storageBucket":"pogworks-1a6d9.appspot.com","messagingSenderId":"875754104884","appId":"1:875754104884:web:2d1eee831719b4b4e28261","measurementId":"G-HV4PWP9F5M","pUSER":"privsek","pPASSWD":"privsek"}}.env.pPASSWD) {
     			return alert("Wrong login info!\nnot privsek maybe????");
     		} else {
-    			$$invalidate(1, loggedIn = true);
+    			$$invalidate(0, loggedIn = true);
     		}
     	}
 
     	function logOut() {
-    		$$invalidate(1, loggedIn = false);
+    		$$invalidate(0, loggedIn = false);
     	}
 
     	const writable_props = [];
@@ -28333,18 +28191,16 @@ var app = (function () {
 
     	function input0_input_handler() {
     		usr = this.value;
-    		$$invalidate(2, usr);
+    		$$invalidate(1, usr);
     	}
 
     	function input1_input_handler() {
     		passwd = this.value;
-    		$$invalidate(3, passwd);
+    		$$invalidate(2, passwd);
     	}
 
     	$$self.$capture_state = () => ({
     		List,
-    		mode,
-    		width,
     		loggedIn,
     		usr,
     		passwd,
@@ -28353,10 +28209,9 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("mode" in $$props) $$invalidate(0, mode = $$props.mode);
-    		if ("loggedIn" in $$props) $$invalidate(1, loggedIn = $$props.loggedIn);
-    		if ("usr" in $$props) $$invalidate(2, usr = $$props.usr);
-    		if ("passwd" in $$props) $$invalidate(3, passwd = $$props.passwd);
+    		if ("loggedIn" in $$props) $$invalidate(0, loggedIn = $$props.loggedIn);
+    		if ("usr" in $$props) $$invalidate(1, usr = $$props.usr);
+    		if ("passwd" in $$props) $$invalidate(2, passwd = $$props.passwd);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -28364,7 +28219,6 @@ var app = (function () {
     	}
 
     	return [
-    		mode,
     		loggedIn,
     		usr,
     		passwd,

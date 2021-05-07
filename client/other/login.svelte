@@ -1,15 +1,9 @@
 <script>
-    import {loginGithub} from '../../auth/loginGithub.js';
-	import {loginGoogle} from '../../auth/loginGoogle.js';
-
-    let mode = "normal";
-
-	const width = screen.width;
-
-	if (width <= 320) mode = "small";
+    import { loginGithub } from "../../auth/loginGithub.js";
+    import { loginGoogle } from "../../auth/loginGoogle.js";
 </script>
 
-<h1 class="{mode === 'small' ? 'h1Small' : ''}" style="font-style: italic;">PP</h1>
+<h1 class="h1Small" style="font-style: italic;">PP</h1>
 <button class="loginButton" on:click={loginGithub}
     ><img
         src="https://image.flaticon.com/icons/svg/25/25231.svg"
@@ -27,19 +21,21 @@
 
 <style>
     .loginButton {
-		background: #dbdbdb;
-		border: #fa9f55 0.2em solid;
-		display: flex;
-    	align-items: center;
-	}
+        background: #dbdbdb;
+        border: #fa9f55 0.2em solid;
+        display: flex;
+        align-items: center;
+    }
 
-	.loginButton:active {
-		background: #dbdbdb;
-		border: #ff5e00 0.2em solid;
-	}
+    .loginButton:active {
+        background: #dbdbdb;
+        border: #ff5e00 0.2em solid;
+    }
 
-    .h1Small {
-        font-size: 5em;
-        padding: 0;
+    @media only screen and (max-width: 600px) {
+        .h1Small {
+            font-size: 5em;
+            padding: 0;
+        }
     }
 </style>

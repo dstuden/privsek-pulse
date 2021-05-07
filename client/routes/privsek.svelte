@@ -2,12 +2,6 @@
 	import "../src/global.css";
 	import List from "../other/list.svelte";
 
-	let mode = "normal";
-
-	const width = screen.width;
-
-	if (width <= 320) mode = "small";
-
 	let loggedIn = false,
 		usr,
 		passwd;
@@ -33,28 +27,28 @@
 	{/if}
 	<section>
 		{#if loggedIn == true}
-			<h3 class="{mode === 'small' ? 'h3Small' : ''}">Welcome<br />Privsek</h3>
+			<h3 class="h3Small">Welcome<br />Privsek</h3>
 			<List />
 		{:else}
-				<h3 class="{mode === 'small' ? 'h3Small' : ''}" >Welcome</h3>
-				<div class="inputs">
+			<h3 class="h3Small">Welcome</h3>
+			<div class="inputs">
 				<input
 					type="text"
-					class="{mode === 'normal' ? 'usr' : 'usrSmall'}"
+					class="usr"
 					placeholder="username"
 					maxlength="15"
 					bind:value={usr}
 				/>
-				<br>
+				<br />
 				<input
 					type="password"
-					class="{mode === 'normal' ? 'passwd' : 'passwdSmall'}"
+					class="passwd"
 					placeholder="password"
 					maxlength="15"
 					bind:value={passwd}
 				/>
-				<br>
-				<button class="{mode === 'normal' ? 'login' : 'loginSmall'}" on:click={logIn}
+				<br />
+				<button class="login" on:click={logIn}
 					><span>Log In</span></button
 				>
 			</div>
@@ -75,30 +69,6 @@
 	}
 
 	.logout:active {
-		background: #dbdbdb;
-		border: #ff5e00 0.2em solid;
-	}
-
-	.login {
-		background: #dbdbdb;
-		border: #fa9f55 0.2em solid;
-		padding: 0.5em;
-		width: 17em;
-	}
-
-	.login:active {
-		background: #dbdbdb;
-		border: #ff5e00 0.2em solid;
-	}
-
-	.loginSmall {
-		background: #dbdbdb;
-		border: #fa9f55 0.2em solid;
-		padding: 0.5em;
-		width: 12em;
-	}
-	
-	.loginSmall:active {
 		background: #dbdbdb;
 		border: #ff5e00 0.2em solid;
 	}
@@ -125,19 +95,45 @@
 		box-sizing: border-box;
 	}
 
-	.usrSmall[type="text"] {
-		padding: 1em 0.5em;
-		box-sizing: border-box;
-		width: 12em;
+	.login {
+		background: #dbdbdb;
+		border: #fa9f55 0.2em solid;
+		padding: 0.5em;
+		width: 17em;
 	}
 
-	.passwdSmall[type="password"] {
-		width: 12em;
-		padding: 1em 0.5em;
-		box-sizing: border-box;
+	.login:active {
+		background: #dbdbdb;
+		border: #ff5e00 0.2em solid;
 	}
 
-	.h3Small {
-		padding-top: 1em;
+	@media only screen and (max-width: 600px) {
+		.h3Small {
+			padding-top: 1em;
+		}
+
+		.usr[type="text"] {
+			padding: 1em 0.5em;
+			box-sizing: border-box;
+			width: 12em;
+		}
+
+		.passwd[type="password"] {
+			width: 12em;
+			padding: 1em 0.5em;
+			box-sizing: border-box;
+		}
+
+		.login {
+			background: #dbdbdb;
+			border: #fa9f55 0.2em solid;
+			padding: 0.5em;
+			width: 12em;
+		}
+
+		.login:active {
+			background: #dbdbdb;
+			border: #ff5e00 0.2em solid;
+		}
 	}
 </style>
