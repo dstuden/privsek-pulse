@@ -10,7 +10,7 @@
 </nav>
 <Router routes={{
 	"/": Home,
-	"/privsek": Privsek
+	"/privsek": Privsek,
 }}/>
 
 <style>

@@ -1,6 +1,8 @@
 <script>
 	import "../src/global.css";
-	import { fade, fly } from "svelte/transition";
+	import { fly } from "svelte/transition";
+	import { writable } from "svelte/store";
+
 	import Icon from "svelte-awesome";
 	import { times } from "svelte-awesome/icons";
 	// parts of site
@@ -17,60 +19,69 @@
 		arr2 = [];
 
 	let user;
+	let alertContent = "",
+		alertInvalid = "";
+
+	let alert;
 
 	const unsubscribe = authState(auth).subscribe((u) => (user = u));
+	let unsubscribeAlert;
 
 	let amount = "",
 		desc = "";
 
 	function alertOrder() {
-		if (amount === "") return alert("No amount specified!");
+		if (amount === "") return (invalidAlert());
 		if (amount < 0 || Number.isNaN(amount) == true || amount > 100)
-			return alert("Amount not valid!");
+			return (invalidAlert());
+		alert = writable(`Your final request is: ${amount}€ \n ${desc}`);
+		unsubscribeAlert = alert.subscribe((value) => (alertContent = value));
+	}
 
-		let send = confirm(`Your final request is:\n` + amount + "\n" + desc);
+	function processOrder() {
+		let date = new Date().toLocaleString("en-US", {
+			timeZone: "Europe/Ljubljana",
+		});
 
-		if (send == true) {
-			let date =
-				new Date().toLocaleTimeString() +
-				" " +
-				new Date().toLocaleDateString();
+		db.collection(user.uid).add({
+			amount: amount,
+			description: desc,
+			date: date,
+		});
 
-			db.collection(user.uid).add({
-				amount: amount,
-				description: desc,
-				date: date,
-			});
+		let userInfo = db.collection(user.uid).doc("userInfo");
+		userInfo.get().then((n) => {
+			if (!n.exists) {
+				userInfo.set({
+					balance: amount,
+				});
+			} else {
+				userInfo.get().then((doc) => {
+					let usrBal = doc.data().balance;
 
-			let userInfo = db.collection(user.uid).doc("userInfo");
-			userInfo.get().then((n) => {
-				if (!n.exists) {
-					userInfo.set({
-						balance: amount,
+					userInfo.update({
+						balance: usrBal + amount,
 					});
-				} else {
-					userInfo.get().then((doc) => {
-						let usrBal = doc.data().balance;
+				});
+			}
+		});
 
-						userInfo.update({
-							balance: usrBal + amount,
-						});
-					});
-				}
-			});
-
-			db.collection("orders").add({
-				name: user.displayName,
-				id: user.uid,
-				amount: amount,
-				description: desc,
-				date: date,
-			});
-		}
+		db.collection("orders").add({
+			name: user.displayName,
+			id: user.uid,
+			amount: amount,
+			description: desc,
+			date: date,
+		});
 	}
 
 	function removeOrder(itemID) {
 		db.collection("approved").doc(itemID).delete();
+	}
+
+	function invalidAlert() {
+		alert = writable(`Invalid order!`)
+		unsubscribeAlert = alert.subscribe((value) => (alertInvalid = value));
 	}
 </script>
 
@@ -112,6 +123,27 @@
 					<button class="profile" on:click={logout}>Log Out</button>
 				</div>
 			</div>
+		</div>
+	{/if}
+	{#if alertContent}
+		<div class="alert" transition:fly={{ x: 20, duration: 300 }}>
+			<p>{alertContent}</p>
+			<button
+				on:click={() => {
+					processOrder();
+					alertContent = "";
+				}}>✔</button
+			>
+			<button on:click={() => (alertContent = "")}
+				><Icon data={times} /></button
+			>
+		</div>
+	{:else if alertInvalid}
+		<div class="alert" transition:fly={{ x: 20, duration: 300 }}>
+			<p>{alertInvalid}</p>
+			<button on:click={() => (alertInvalid = "")}
+				><Icon data={times} /></button
+			>
 		</div>
 	{/if}
 	<section>
@@ -260,8 +292,24 @@
 		background: #ff5e00;
 	}
 
-	@media only screen and (max-width: 600px) {
+	.alert {
+		position: absolute;
+		right: 1em;
+		overflow: auto;
+		width: 15em;
+		word-wrap: break-word;
+		max-height: 50%;
+		-ms-overflow-style: none;
+		background-color: #d8d8d8;
+		scrollbar-width: none;
+		border: #fa9f55 0.2em solid;
+	}
 
+	.alert::-webkit-scrollbar {
+		display: none;
+	}
+
+	@media only screen and (max-width: 600px) {
 		.history::-webkit-scrollbar {
 			display: none;
 		}
@@ -285,6 +333,23 @@
 			scrollbar-width: none;
 		}
 
+		.alert {
+			position: absolute;
+			right: 0;
+			overflow: auto;
+			word-wrap: break-word;
+			font-size: 0.9em;
+			max-height: 80%;
+			background-color: #e6e6e6;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			border: #fa9f55 0.2em solid;
+		}
+
+		.alert::-webkit-scrollbar {
+			display: none;
+		}
+
 		.request:active {
 			border: 0.2em #fa9f55 solid;
 			background: #ff5e00;
@@ -295,6 +360,5 @@
 			border: 0.2em #ff5e00 solid;
 			width: 12em;
 		}
-
 	}
 </style>
